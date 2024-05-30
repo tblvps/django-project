@@ -1,0 +1,27 @@
+{% load socialaccount %}
+{% load account %}
+{% extends '_base.html' %}
+
+    {% block content %}
+    <h2>Login with Social Account</h2>
+    {% providers_media_js %}
+    {% if next %}
+        <form method="post" action="{% url 'account_login' %}">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            {% get_providers as socialaccount_providers %}
+            {% for provider in socialaccount_providers %}
+                <a href="{% provider_login_url provider.id process='redirect' %}">
+                    {{ provider.name }}
+                </a>
+            {% endfor %}
+        </form>
+    {% else %}
+        {% get_providers as socialaccount_providers %}
+        {% for provider in socialaccount_providers %}
+            <a href="{% provider_login_url provider.id process='redirect' %}">
+                {{ provider.name }}
+            </a>
+        {% endfor %}
+    {% endif %}
+   {% endblock %}

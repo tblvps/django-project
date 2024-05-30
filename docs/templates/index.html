@@ -1,0 +1,10 @@
+{% extends '_base.html' %}
+
+{% block content %}
+    <section>
+        {% load i18n %}
+{% blocktrans %}Hello from {{ current_site.name }}!{% endblocktrans %}
+{% blocktrans %}Please go to the following page to confirm your email address:{% endblocktrans %}
+{% blocktrans %}{{ activate_url }}{% endblocktrans %}
+    </section>
+{% endblock %}
