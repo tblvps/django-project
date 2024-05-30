@@ -1,10 +1,2 @@
 # django-full-project
-# django-full-project
-# django-full-project
-# django-full-project
-# django-full-project
-# django-full-project
-# django-project
-# django-project
-# django-project
-# django-project
+
