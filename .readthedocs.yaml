@@ -11,4 +11,3 @@ build:
       - curl -X POST \
         -F "project=${READTHEDOCS_PROJECT}" \
         -F "version=${READTHEDOCS_VERSION}" https://example.com/webhooks/readthedocs/
-User-de
